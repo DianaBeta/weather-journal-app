@@ -39,17 +39,17 @@ function listening(){
 };
 // Initialize all route with a callback function
 
-app.get('/all', sendData);
+/*app.get('/all', sendData);
 
 // Callback function to complete GET '/all'
 function sendData (request, response) {
   response.send(projectData);
-};
+}; */
 
 //GET route
 
 app.get('/all', function (req, res) {
-  res.send(projectData);
+  res.send(postData);
 });
 // Post Route
 const postData = [];

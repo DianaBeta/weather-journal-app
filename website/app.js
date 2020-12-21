@@ -31,9 +31,12 @@ const updateUI = async () => {
   const request = await fetch ('/all');
   try{
     const allData = await request.json();
-    document.getElementById('city').innerHTML =allData.city;
-    document.getElementById('temp').innerHTML = allData.temp;
-    document.getElementById('content').innerHTML= allData.feelings;
+    console.log(allData);
+    const last_entry = allData[allData.length - 1];
+    console.log(last_entry);
+    document.getElementById('city').innerHTML =last_entry.city;
+    document.getElementById('temp').innerHTML = last_entry.temp;
+    document.getElementById('content').innerHTML= last_entry.feelings;
     
   }catch(error){
   }
