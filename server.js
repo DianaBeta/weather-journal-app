@@ -57,12 +57,15 @@ const postData = [];
 // TODO POST ROUTE
 app.post('/add',function(req, res) {
   let data = req.body;
-  //console.log(data);
+  // console.log(data);
   newEntry = {
-      zip: req.body.zip
+      zip: req.body.zip,
+      temp: req.body.temp,
+      feelings: req.body.feelings,
+      city: req.body.city
   }
   postData.push(newEntry)
 
   res.send(postData);
-  console.log(projectData)
+  console.log(postData)
 });

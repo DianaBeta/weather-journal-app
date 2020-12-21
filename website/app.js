@@ -1,6 +1,6 @@
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?id=524901&appid=';
-let apiKey = '4eafbda4626b43a67d3d3610484d19c2';
+const apiKey = '4eafbda4626b43a67d3d3610484d19c2';
 // Event listener to add function to existing HTML DOM element
 
 /* Function called by event listener */
@@ -9,8 +9,7 @@ document.getElementById('generate').addEventListener('click', performAction);
 /* Function to GET Web API Data*/
 
 function performAction(e){
-  const zip =  document.getElementById('zip').value;
-  const temp = document.getElementById('temp').value  
+  const zip =  document.getElementById('zip').value; 
   const feelings = document.getElementById('feelings').value;
   
 
@@ -18,12 +17,13 @@ function performAction(e){
 
   .then(function(data){
     //Add data
-    console.log("DATA " + data)
-    postData('/add', { temp: data.list[0].main.temp, zip: zip});
+    console.log(data)
+    postData('/add', { temp: data.main.temp,city: data.name, zip: zip, feelings: feelings});
   })
 
   .then(
     updateUI()
+    
       )
   }
 
@@ -31,14 +31,17 @@ const updateUI = async () => {
   const request = await fetch ('/all');
   try{
     const allData = await request.json();
-    document.getElementById('temp').innerHTML = postData[0].temp;
+    document.getElementById('city').innerHTML =allData.city;
+    document.getElementById('temp').innerHTML = allData.temp;
+    document.getElementById('content').innerHTML= allData.feelings;
+    
   }catch(error){
   }
 }
 /* Function to POST data */
 
 const postData = async ( url  = '', data = {})=>{
-    console.log(data);
+   // console.log(data);
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
