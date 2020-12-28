@@ -86,6 +86,7 @@ body{
     margin-left: 160px;
     margin-right: 160px;
     margin-top: 60px;
+    padding: 20px;
     background-color: white;
     border-radius: 2px;
     grid-area: card;
@@ -93,7 +94,7 @@ body{
     border-color: yellow;
     display: grid;
     color:black;
-    justify-content: center;
+    justify-content: left;
     grid-gap: 1em;
     font-size: 20px;
 
