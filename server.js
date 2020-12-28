@@ -26,7 +26,7 @@ const http = require("http");
 const { request } = require('express');
 
 const hostname = "127.0.0.1";
-const port = 8000;
+const port = 3000;
 // Spin up the server
 const server = app.listen(port, listening);
 // Callback to debug
@@ -39,20 +39,16 @@ function listening(){
 };
 // Initialize all route with a callback function
 
-/*app.get('/all', sendData);
 
-// Callback function to complete GET '/all'
-function sendData (request, response) {
-  response.send(projectData);
-}; */
+// Callback function to complete GET '/all
 
 //GET route
 
 app.get('/all', function (req, res) {
-  res.send(postData);
+  res.send(projectData);
 });
 // Post Route
-const postData = [];
+//const postData = [];
 
 // TODO POST ROUTE
 app.post('/add',function(req, res) {
@@ -64,8 +60,10 @@ app.post('/add',function(req, res) {
       feelings: req.body.feelings,
       city: req.body.city
   }
-  postData.push(newEntry)
-
-  res.send(postData);
-  console.log(postData)
+//postData.push(newEntry)
+  projectData.newEntry = newEntry;
+  //res.send(postData);
+  res.send(projectData);
+  //console.log(postData)
+  console.log(projectData);
 });

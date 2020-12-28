@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-let baseURL = 'http://api.openweathermap.org/data/2.5/weather?id=524901&appid=';
+let baseURL = 'http://api.openweathermap.org/data/2.5/weather?&units=metric&appid=';
 const apiKey = '4eafbda4626b43a67d3d3610484d19c2';
 // Event listener to add function to existing HTML DOM element
 
@@ -12,31 +12,33 @@ function performAction(e){
   const zip =  document.getElementById('zip').value; 
   const feelings = document.getElementById('feelings').value;
   
+    getTemp(baseURL, zip, apiKey)
 
-  getTemp(baseURL, zip, apiKey)
+    .then(function(data){
+      //Add data
+      console.log(data)
+      postData('/add', { temp: data.main.temp,city: data.name, zip: zip, feelings: feelings});
+    })
 
-  .then(function(data){
-    //Add data
-    console.log(data)
-    postData('/add', { temp: data.main.temp,city: data.name, zip: zip, feelings: feelings});
-  })
-
-  .then(
-    updateUI()
-    
-      )
-  }
+    .then(function(){
+      updateUI()
+    });
+}
 
 const updateUI = async () => {
   const request = await fetch ('/all');
   try{
-    const allData = await request.json();
-    console.log(allData);
-    const last_entry = allData[allData.length - 1];
+    const projectData = await request.json();
+    console.log(projectData);
+    const last_entry = projectData.newEntry;
     console.log(last_entry);
     document.getElementById('city').innerHTML =last_entry.city;
     document.getElementById('temp').innerHTML = last_entry.temp;
     document.getElementById('content').innerHTML= last_entry.feelings;
+    document.querySelector(".card")= card;
+    document.querySelector(".entryHolder")= entryHolder;
+    card.classList.add("invisible");
+    entryHolder.remove("invisible");
     
   }catch(error){
   }
@@ -69,10 +71,10 @@ const postData = async ( url  = '', data = {})=>{
 const getTemp = async (baseURL, zipCode, apiKey)=>{
   const res = await fetch(baseURL+apiKey+'&zip='+zipCode+',de');
   try{
-      const data = await res.json()
+      const data = await res.json();
       console.log(data);
-      return data
-  }catch(error){
+      return data;
+    }catch(error){
       console.log("error", error);
+    }
   }
-}
