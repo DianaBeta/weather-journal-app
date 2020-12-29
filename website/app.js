@@ -38,7 +38,7 @@ const updateUI = async () => {
     const card= document.querySelector(".card");
     const entryHolder= document.querySelector(".entryHolder");
     card.classList.add("invisible");
-    entryHolder.remove("invisible");
+    entryHolder.classList.remove("invisible");
     
   }catch(error){
   }
