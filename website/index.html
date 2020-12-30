@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Weather Journal</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mlv3eac.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="#" />
 </head>
@@ -11,28 +13,26 @@
     <div class= "app">
       <div class= "holder-headline" >Weather Journal</div>
       <div class = "card" > 
-          <div class ="holder-zip">
             <input type="text" id="zip" placeholder=" Enter Zip code">
-          </div>
-          <div class ="generate">
-            <textarea class= "myInput" id="feelings" placeholder="How are you feeling today?" rows="3" cols="5"></textarea>
-            <button id="generate" type = "submit"> Get weather </button>
-          </div>
-      </div>
-            
-            <digitv class = "entryHolder invisible">
-                <div id = "date"></div> 
-                <div> You are in</div>
-                <div id = "city"></div>
-            <div>Which currently has a temperature of: </div>
-            <div id = "temp"></div>
-            <div>And you are feeling: </div>
-            <div id = "content"></div>
+            <div class ="feelings">
+              <input class= "myInput" id="feelings" placeholder="How are you feeling today?" rows="3" cols="5"></textarea>
             </div>
+          <button id="generate" type = "submit"> Get weather </button>
+      </div>
+        
+        <div class = "entryHolder invisible">
+            <div id = "date">Date:</div> 
+            <div id = "city">City:</div>
+            <i class="fas fa-cloud" id="header-icon"></i>
+            <div id = "temp">Temperature:</div>
+            <div id = "temp-max-min"> </div>
+            <div id = "content">Feeling:</div>
+            <a href="index.html"> &lt; Go back</a>
+            
+        </div>
           
         
     </div>
-  
   <script src="./app.js" type="text/javascript"></script>
 </body>
 </html>

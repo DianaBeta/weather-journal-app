@@ -1,6 +1,8 @@
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?&units=metric&appid=';
 const apiKey = '4eafbda4626b43a67d3d3610484d19c2';
+let today = new Date();   
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 // Event listener to add function to existing HTML DOM element
 
 /* Function called by event listener */
@@ -14,11 +16,11 @@ function performAction(e){
   
     getTemp(baseURL, zip, apiKey)
 
-    .then(function(data){
-      //Add data
-      console.log(data)
-      postData('/add', { temp: data.main.temp,city: data.name, zip: zip, feelings: feelings});
-    })
+    .then((data) => {
+        //Add data
+        console.log(data);
+        postData('/add', { temp: data.main.temp, city: data.name, zip: zip, feelings: feelings, temp_max: data.main.temp_max, temp_min: data.main.temp_min });
+      })
 
     .then(function(){
       updateUI()
@@ -32,9 +34,11 @@ const updateUI = async () => {
     console.log(projectData);
     const last_entry = projectData.newEntry;
     console.log(last_entry);
-    document.getElementById('city').innerHTML =last_entry.city;
-    document.getElementById('temp').innerHTML = last_entry.temp;
-    document.getElementById('content').innerHTML= last_entry.feelings;
+    document.getElementById('city').innerHTML = ` ${last_entry.city} ,DE`; 
+    document.getElementById('temp').innerHTML = ` ${last_entry.temp}°`;
+    document.getElementById('content').innerHTML= `Feeling: ${last_entry.feelings}`;
+    document.getElementById('temp-max-min').innerHTML= `Max: ${last_entry.temp_max}°  Min: ${last_entry.temp_min}°`;
+    document.getElementById('date').innerHTML= date;
     const card= document.querySelector(".card");
     const entryHolder= document.querySelector(".entryHolder");
     card.classList.add("invisible");

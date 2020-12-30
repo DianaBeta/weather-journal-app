@@ -1,9 +1,7 @@
 body{
-    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.6) ), url(./img/sky.jpg);
+    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.2) ), url(./img/sky.jpg);
     font-family: 'Roboto', sans-serif;
-    color:black;
-    border-style: solid;
-    border-color: blue;
+    margin-top: 40px;
 }
 
 
@@ -12,19 +10,33 @@ body{
     grid-template-areas: "title"
                          "card";
     font-family: 'Roboto', sans-serif;;
-    border-style: solid;
-    border-color:pink;
+    margin: 20px;
+    
 }
 
 #zip{   
     margin: 20px;
     padding: 1px;
-    border-style: solid;
-    border-color:black;
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
 }
 
 #feelings{
     margin: 20px;
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
 }
 
 /**************APP HEADLINE*************/
@@ -34,48 +46,36 @@ body{
     display: grid;
     height:10vh;
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: brandon-grotesque, sans-serif;
     color:white;
     align-content: center;
     text-align: center;
-    border-style: solid;
-    border-color: blueviolet;
     font-size: 60px;
 }
 
 .card{
     margin-left: 160px;
     margin-right: 160px;
-    margin-top: 60px;
+    padding-left: 250px;
+    margin-top: 150px;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;                    
     grid-area: card;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-style: solid;
-    border-color:green;
     border-radius: 2px;
-    background-color: white;
-    justify-content: center;
-
     
-
 }
 
-.generate{
+#generate{
     font-family: 'Roboto', sans-serif;
-    border-style: solid;
-    border-color:black;
-    color:black;
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+    color: white;
+    margin-right: 1px;
 }
 
 .holder-zip{
     display: grid;
     justify-content: center;
     margin: 20px;
-    border-style: solid;
-    border-color: yellow;
     display: grid;
     justify-content: left;
 
@@ -83,18 +83,14 @@ body{
 
 
 .entryHolder{
+
     margin-left: 160px;
     margin-right: 160px;
     margin-top: 60px;
     padding: 20px;
-    background-color: white;
-    border-radius: 2px;
     grid-area: card;
-    border-style: solid;
-    border-color: yellow;
     display: grid;
-    color:black;
-    justify-content: left;
+    color:white;
     grid-gap: 1em;
     font-size: 20px;
 
@@ -102,25 +98,41 @@ body{
 
 #date{
     font-family: 'Roboto', sans-serif;
-    color:black;
+    color:white;
+    justify-self: center;
 }
 
 #temp{
-    border-style: solid;
-    border-color: red;
-    color: gray;
+    font-size: 40px;
+    color:white;
+    justify-self: center;
 }
+#temp-max-min{
+    font-size: 20px;
+    color:white;
+    
+    justify-self: center;
+    
+}
+
+.fa-cloud{
+    justify-self: center;
+}
+
+
+#city{
+    font-size: 40px;
+    justify-self: center;
+}
+
 
 #content{
     font-family: 'Roboto', sans-serif;
-    color:gray;
+    color:white;
+    justify-self: center;
+
 }
 
-
-.title{
-    font-family: 'Roboto', sans-serif;
-    color:black;
-}
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
@@ -132,32 +144,36 @@ label{
 input{
     height: 50px;
     width: 300px;
-    background:whitesmoke;
     border: none;
-    color: grey;
+    color: white;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     justify-content: left;
-    border: 1px;
-    border-radius: 5px;
+    
 }
 
 .invisible{
     visibility: hidden;
 }
 
+a {
+    color: white;
+  }
+
 button{
-    width: 200px;
-    height: 40px;
+    width: 300px;
+    height: 50px;
     background:#73DCE5;
     color: white;
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Roboto', sans-serif;
     border: none;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    margin: 30px auto;
-    border-radius: 2px;
+    margin-left: 300px;
+    border-radius: 3px;
+    margin-top: 30px;
     transition: background-color .3s;
+    justify-self: center;
    
 }
 .button:hover, .button:focus {
@@ -167,15 +183,6 @@ h1{
     font-size: 36px;
 }
 
-textarea{
-    height: 60px;
-    width: 300px;
-    background:whitesmoke;
-    color: grey;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 3px;
-}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -185,19 +192,19 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: grey; 
+    color:white; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: grey; 
+    color:white; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: grey; 
+    color: white; 
     font-family: 'Oswald', sans-serif;
 
 } 

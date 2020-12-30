@@ -26,7 +26,7 @@ const http = require("http");
 const { request } = require('express');
 
 const hostname = "127.0.0.1";
-const port = 3000;
+const port = 2000;
 // Spin up the server
 const server = app.listen(port, listening);
 // Callback to debug
@@ -57,6 +57,8 @@ app.post('/add',function(req, res) {
   newEntry = {
       zip: req.body.zip,
       temp: req.body.temp,
+      temp_max: req.body.temp_max,
+      temp_min: req.body.temp_min,
       feelings: req.body.feelings,
       city: req.body.city
   }
