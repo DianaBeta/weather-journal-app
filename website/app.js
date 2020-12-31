@@ -1,6 +1,6 @@
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?&units=metric&appid=';
-const apiKey = '4eafbda4626b43a67d3d3610484d19c2';
+const apiKey = $apikey.;
 let today = new Date();   
 let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 // Event listener to add function to existing HTML DOM element
