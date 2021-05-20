@@ -26,7 +26,7 @@ const http = require("http");
 const { request } = require('express');
 
 const hostname = "127.0.0.1";
-const port = 2000;
+var port = process.env.PORT || 2000;
 // Spin up the server
 const server = app.listen(port, listening);
 // Callback to debug
