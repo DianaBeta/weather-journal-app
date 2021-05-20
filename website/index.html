@@ -2,36 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Journal</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/mlv3eac.css">
     <script src="https://kit.fontawesome.com/f91f9cbaa5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
     <link rel="shortcut icon" href="#" />
 </head>
  <body> 
     <div class= "app">
-      <div class= "holder-headline" >Weather Journal</div>
+      <div class= "holder-headline" >Current weather</div>
       <div class = "card" > 
             <input type="text" id="zip" placeholder=" Enter a german zip code">
             <div class ="feelings">
-              <input class= "myInput" id="feelings" placeholder="How are you feeling today?" rows="3" cols="5"></textarea>
+              <input class= "myInput" id="feelings" placeholder="How are you feeling today?" rows="3" cols="5" required></textarea>
             </div>
-          <button id="generate" type = "submit"> Get weather </button>
+          <button class = "button" id="generate" type = "submit"> Get weather </button>
       </div>
+      
         
         <div class = "entryHolder invisible">
+            
             <div id = "date">Date:</div> 
             <div id = "city">City:</div>
             <i class="fa fa-cloud fa-3x" id="header-icon"></i>
             <div id = "temp">Temperature:</div>
             <div id = "temp-max-min"> </div>
             <div id = "content">Feeling:</div>
-            <a href="index.html"> &lt; Go back</a>
-            
         </div>
+
+        <a class= "go-back invisible" href ="index.html"> &lt; Go back</a>
           
         
+    
     </div>
   <script src="./app.js" type="text/javascript"></script>
 </body>

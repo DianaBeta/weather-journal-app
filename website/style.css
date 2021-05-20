@@ -1,21 +1,43 @@
+@import "mediaqueries.css";
 body{
-    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.2) ), url(./img/sky.jpg);
+    background: rgb(65,201,236);
+    background: linear-gradient(110deg, rgba(65,201,236,1) 45%, rgba(3,139,207,1) 100%);
     font-family: 'Roboto', sans-serif;
-    margin-top: 40px;
+    width: 100%;
+    height: auto;
 }
 
 
 .app{
     display: grid; 
+    grid-gap: 1em;
     grid-template-areas: "title"
-                         "card";
+                         "card"
+                         "go-back";
     font-family: 'Roboto', sans-serif;;
-    margin: 20px;
+    ;
     
 }
+.go-back{
+    grid-area: go-back;
+    margin:4vh;
+    font-weight: 600;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: "zip"
+                         "feelings"
+                         "button";
+    margin-top: 10vh;    
+    grid-area: card;
+}
 
-#zip{   
-    margin: 20px;
+#zip{
+    margin: 2vh;
+    grid-area: zip;
     padding: 1px;
     background-color: transparent;
     color: #eeeeee;
@@ -28,9 +50,10 @@ body{
 }
 
 #feelings{
-    margin: 20px;
+    grid-area: feelings;
     background-color: transparent;
     color: #eeeeee;
+    margin: 2vh;
     outline: none;
     outline-style: none;
     border-top: none;
@@ -41,30 +64,23 @@ body{
 
 /**************APP HEADLINE*************/
 .holder-headline {
-    margin-top:30px;
+    
+    justify-items: center;
+    padding: 2vh;
     grid-area: title;
     display: grid;
-    height:10vh;
-    position: relative;
+    /*height:10vh;
+    position: relative;*/
     font-family: brandon-grotesque, sans-serif;
     color:white;
     align-content: center;
     text-align: center;
-    font-size: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 7rem;
 }
 
-.card{
-    margin-left: 160px;
-    margin-right: 160px;
-    padding-left: 250px;
-    margin-top: 150px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;                    
-    grid-area: card;
-    border-radius: 2px;
-    
-}
+
 
 #generate{
     font-family: 'Roboto', sans-serif;
@@ -83,53 +99,55 @@ body{
 
 
 .entryHolder{
-
-    margin-left: 160px;
-    margin-right: 160px;
-    margin-top: 60px;
+    /*margin-left: 160px;
+    margin-right: 160px; 
+    margin-top: 60px;*/
+    background: rgb(0,111,151);
+    background: linear-gradient(110deg, rgba(0,111,151,1) 45%, rgba(0,133,163,1) 100%);
+    justify-self: center;
     padding: 20px;
     grid-area: card;
     display: grid;
     color:white;
     grid-gap: 1em;
     font-size: 20px;
-
+    border-radius: 3px;
 }
 
 #date{
     font-family: 'Roboto', sans-serif;
     color:white;
-    justify-self: center;
+    justify-self: left
 }
 
 #temp{
     font-size: 40px;
     color:white;
-    justify-self: center;
+    justify-self: left;
 }
 #temp-max-min{
     font-size: 20px;
     color:white;
     
-    justify-self: center;
+    justify-self: left;
     
 }
 
 .fa-cloud{
-    justify-self: center;
+    justify-self: left;
 }
 
 
 #city{
     font-size: 40px;
-    justify-self: center;
+    justify-self: left;
 }
 
 
 #content{
     font-family: 'Roboto', sans-serif;
     color:white;
-    justify-self: center;
+    justify-self: left;
 
 }
 
@@ -153,7 +171,7 @@ input{
 }
 
 .invisible{
-    visibility: hidden;
+    display: none;
 }
 
 a {
@@ -161,26 +179,25 @@ a {
   }
 
 button{
+    grid-area: button;
     width: 300px;
     height: 50px;
-    background:#73DCE5;
+    background: #04364E;
     color: white;
     font-size: 23px;
     font-family: 'Roboto', sans-serif;
     border: none;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    margin-left: 300px;
-    border-radius: 3px;
-    margin-top: 30px;
+    border-radius: 3.3px;
     transition: background-color .3s;
-    justify-self: center;
+    margin-top:5vh;
    
 }
 .button:hover, .button:focus {
-    background-color: #168190;
+    background-color: #02111B;
   }
 h1{
-    font-size: 36px;
+    font-size: 10em;
 }
 
 /* Reset style for HTML element on active to have no border*/

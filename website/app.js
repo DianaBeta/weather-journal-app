@@ -19,6 +19,9 @@ function performAction(e){
     .then((data) => {
         //Add data
         console.log(data);
+        if (data.main == undefined){
+          alert("Please enter a German zip-code")
+        }
         postData('/add', { temp: data.main.temp, city: data.name, zip: zip, feelings: feelings, temp_max: data.main.temp_max, temp_min: data.main.temp_min });
       })
 
@@ -43,6 +46,9 @@ const updateUI = async () => {
     const entryHolder= document.querySelector(".entryHolder");
     card.classList.add("invisible");
     entryHolder.classList.remove("invisible");
+    const goback = document.querySelector(".go-back");
+    goback.classList.remove("invisible");
+
     
   }catch(error){
   }

@@ -1,0 +1,228 @@
+@import "style.css";
+
+
+/* Medium Screens */
+@media (min-width: 600px) and (max-width:900px) {
+    
+    .card{
+        display:grid;
+        grid-template-areas: "zip feelings"
+                             "button button";        
+        grid-area: card;
+    }
+    .invisible{
+        display: none;
+    }
+    #zip{
+        
+        margin: 2vh;
+        grid-area: zip;
+        padding: 1px;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+    #feelings{
+        grid-area: feelings;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+}
+
+
+
+/* Portrait and Landscape */
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    .card{
+        display:grid;
+        grid-template-areas: "zip feelings"
+                             "button button";
+        border: #7e9016 2px solid;
+        margin: 160px;           
+        grid-area: card;
+    }
+    .invisible{
+        display: none;
+    }
+    #zip{
+        
+        margin: 2vh;
+        grid-area: zip;
+        padding: 1px;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+    #feelings{
+        grid-area: feelings;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+}
+
+       /* Portrait and Landscape */
+/* ----------- iPad ----------- */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1023px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+    
+    .card{
+        display:grid;
+        grid-template-areas: "zip feelings"
+                             "button button";
+        margin: 160px;           
+        grid-area: card;
+    }
+    .invisible{
+        display: none;
+    }
+    #zip{
+        
+        margin: 2vh;
+        grid-area: zip;
+        padding: 1px;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+    #feelings{
+        grid-area: feelings;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+ 
+}  
+
+  /* Large Screens */
+@media (min-width:901px) and (max-width:1200px) { 
+   
+    .card{
+        display:grid;
+        grid-template-areas: "zip feelings"
+                             "button button";
+        margin: 160px;           
+        grid-area: card;
+    }
+    .invisible{
+        display: none;
+    }
+    #zip{
+        
+        margin: 2vh;
+        grid-area: zip;
+        padding: 1px;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+    #feelings{
+        grid-area: feelings;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    button{
+        justify-self: center;
+    }
+}
+
+  /* Ever larger Screens */
+  @media (min-width:1200px){
+    
+    .card{
+        display:grid;
+        grid-template-areas: "zip feelings"
+                             "button button";
+        margin: 160px;           
+        grid-area: card;
+    }
+    button{
+        justify-self: center;
+    }
+    .invisible{
+        display: none;
+    }
+    #zip{
+        
+        margin: 2vh;
+        grid-area: zip;
+        padding: 1px;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+    
+    #feelings{
+        grid-area: feelings;
+        background-color: transparent;
+        color: #eeeeee;
+        outline: none;
+        outline-style: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid #eeeeee 1px;
+    }
+
+   
+}
